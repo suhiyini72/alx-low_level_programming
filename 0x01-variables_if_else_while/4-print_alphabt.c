@@ -10,12 +10,12 @@
 
 int main(void)
 {
-char lower, val, vel;
-val = 'val';
-vel = 'vel';
+char lower, e, q;
+e = 'e';
+q = 'q';
 for (lower = 'a'; lower <= 'z'; lower++)
 {
-if (lower != val && lower != vel)
+if (lower != e && lower != q)
 putchar(lower);
 }
 putchar('\n');
