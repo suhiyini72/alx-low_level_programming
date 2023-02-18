@@ -1,4 +1,4 @@
-#iiinclude <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -10,19 +10,19 @@
 
 int main(void)
 {
-int y, z, g;
-for (y = '0'; y < '9'; y++)
+int z, w, s;
+for (z = '0'; z < '9'; z++)
 {
-for (z = y + 1; z <= '9'; z++)
+for (w = z + 1; w <= '9'; w++)
 {
-for (g = z + 1; g <= '9'; g++)
+for (s = w + 1; s <= '9'; s++)
 {
-if ((z != y) != g)
+if ((w != z) != s)
 {
-putchar(y);
 putchar(z);
-putchar(g);
-if (y == '7' && z == '8')
+putchar(w);
+putchar(s);
+if (z == '7' && w == '8')
 continue;
 putchar(',');
 putchar(' ');
