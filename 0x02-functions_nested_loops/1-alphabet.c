@@ -1,13 +1,32 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * This prints alphabets in lowercase fallowed by a new line character
- * Return: alphabets in lowercase
+ * main - Entry point
+ *
+ * This program prints alphabets in lowercase fallowed by a new line
  */
-int main(){
+void main()
+{
 char k;
-for (k = 'a'; k <= 'z'; k++){
-putchar(k);
-putchar('\n');
+for (k = 'a'; k <= 'z'; k++)
+{
+_putchar(k);
+_putchar("\n");
 }
 }
+
+/*
+#include <main.h>
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ 
+int _putchar(char _putchar)
+{
+	return (write(1, &_putchar, 1));
+}
+*/ 

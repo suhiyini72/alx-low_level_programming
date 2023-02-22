@@ -1,15 +1,14 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
- * main - The main Entry point for this program
- *
- * Return: Return 0 if successful compilation 
+ * main - Check description
+ * Description: It prints the character _putchar, followed by a new line.
+ * Return: 0.
  */
 int main(void)
 {
-int putchar(){
-int *c = "_putchar";
-putchar(c);
+_putchar("_putchar");
+_putchar('\n');
 return (0);
-}
-}
+}   
