@@ -9,9 +9,9 @@ void puts_half(char *str)
 {
 	int length = 0;
 
-	int = k;
+	int k;
 
-	int = y;
+	int y;
 
 	while (str[length] != '\0')
 		length++;
@@ -22,7 +22,7 @@ void puts_half(char *str)
 	else
 		k = (length + 1) / 2;
 
-	for (k = y; i < length; k++)
+	for (k = y; k < length; k++)
 		_putchar(str[k]);
 
 	_putchar('\n');
