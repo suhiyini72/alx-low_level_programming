@@ -7,8 +7,9 @@
  * Return: returns the number of bytes of the string s
  */
 int _strlen(char *s)
-{
-	int str_length;
+{ 
+
+	int str_length = 0;
 
 	while (s[str_length] != '\0')
 		str_length++;
