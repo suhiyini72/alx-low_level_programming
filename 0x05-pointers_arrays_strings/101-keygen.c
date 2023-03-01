@@ -1,60 +1,39 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 /**
- * randomValidPasswordGenerator -  a function that generates random password
- * @n: the input password
- * Return: Nothing
+ * main - program that generates random valid
+ * passwords for the program 101-crackme
+ *
+ * Return: Always 0 (Success)
  */
-
-void randomValidPasswordGenerator(int n)
+int main(void)
 {
-	int k = 0;
+	int pw[100];
 
-	int ran = 0;
+	int k;	
+	int sum;
 
-	srand((unsigned int)(time(NULL)));
-
-	char num[] = "0123456789";
-
-	char letters[] = "abcdefghijklmnoqprstuvwyzx";
-
-	char LETTERS[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
-
-	char symbols[] = "!@#$^&*?";
-
-	char password[n];
-
-	ran = rand() % 4;
-
-	for (k = 0; k < n; k++) 
+	int n;
+	sum = 0;	
+	
+	srand(time(NULL));
+	
+	for (k = 0; k < 100; k++)
 	{
+		pw[k] = rand() % 78;
+		sum += (pw[k] + '0');
+		putchar(pw[k] + '0');
+		if ((2772 - sum) - '0' < 78)
+		{
+			n = 2772 - sum - '0';
+			sum += n;
+			putchar(n + '0');
+			break;
+		}
+	}
 
-		if (ran == 1) 
-		{
-		password[k] = num[rand() % 10];
-		ran = rand() % 4;
-		printf("%c", password[k]);
-		}
-		else if (ran == 2) 
-		{
-		password[k] = symbols[rand() % 8];
-		ran = rand() % 4;
-		printf("%c", password[k]);
-		}
-		else if (ran == 3) 
-		{
-		password[k] = LETTERS[rand() % 26];
-		ran = rand() % 4;
-		printf("%c", password[k]);
-		}
-		else 
-		{
-		password[i] = letters[rand() % 26];
-		ran = rand() % 4;
-		printf("%c", password[k]);
-        	}
-    }
+	return (0);
 }
+
