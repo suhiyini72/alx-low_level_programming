@@ -3,39 +3,47 @@
 #include <stdlib.h>
 
 /**
- * alloc_grid - A function that returns a pointer to a
- * 2 dimensional array of integers
- * @width: An input integer at number of columns
- * @height: An input integer at number of rows
- * Return: pointer to a 2D array, NULL on failure
+ * **strtow - splits a string into words
+ * @str: string to split
+ * Return: pointer to an array of strings (Success)
+ * or NULL (Error)
  */
-
-int **alloc_grid(int width, int height)
+char **strtow(char *str)
 {
-	if (width <= 0 || height <= 0)
-	{
-	return NULL;
-	}
-	
-	int **grid = (int **)malloc(height * sizeof(int *));
+	char **matrix, *tmp;
 
-		if (grid == NULL)
-		{
-		return NULL;
-		}
+	int i, k = 0, len = 0, words, c = 0, start, end;
 
-	for (int i = 0; i < height; i++)
+	while (*(str + len))
+		len++;
+	words = count_word(str);
+	if (words == 0)
+		return (NULL);
+
+	matrix = (char **) malloc(sizeof(char *) * (words + 1));
+	if (matrix == NULL)
+		return (NULL);
+	for (i = 0; i <= len; i++)
 	{
-	grid[i] = (int *)malloc(width * sizeof(int));
-			
-		if (grid[i] == NULL)
+		if (str[i] == ' ' || str[i] == '\0')
 		{
-			for (int j = 0; j < i; j++)
+			if (c)
 			{
-			free(grid[j]);
+				end = i;
+				tmp = (char *) malloc(sizeof(char) * (c + 1));
+				if (tmp == NULL)
+					return (NULL);
+				while (start < end)
+					*tmp++ = str[start++];
+					*tmp = '\0';
+			matrix[k] = tmp - c;
+				k++;
+			c = 0;
 			}
-			free(grid);
-			return NULL;
 		}
+		else if (c++ == 0)
+		start = i;
 	}
+	matrix[k] = NULL;
+	return (matrix);
 }
