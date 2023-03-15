@@ -1,83 +1,52 @@
 #include "main.h"
-		
 #include <stdlib.h>
-		
+
 /**
-		
- * str_concat - get ends of input and add together for size
-		
- * @s1: input one to concat
-		
- * @s2: input two to concat
-		
- * Return: concat of s1 and s2
-		
+ * str_concat - A function that concatenates two strings
+ * @s1: An input pointer of the first string
+ * @s2: An input pointer of the second string
+ * Return: Apointer to concatened strings or NULL if it str is NULL
  */
-		
 char *str_concat(char *s1, char *s2)
-		
 {
-		
-	char *conct;
-		
-	int i, ci;
-		
+	char *new_str, *starts1, *starts2;
+	int i = 0, lens1 = 0, lens2 = 0;
 
-		
+	starts1 = s1;
+	starts2 = s2;
 	if (s1 == NULL)
-		
 		s1 = "";
-		
+	while (*s1)
+	{
+		lens1++;
+		s1++;
+	}
+	s1 = starts1;
 	if (s2 == NULL)
-		
 		s2 = "";
-		
-
-		
-		i = ci = 0;
-		
-	while (s1[i] != '\0')
-		
-		i++;
-		
-	while (s2[ci] != '\0')
-		
-		ci++;
-		
-	conct = malloc(sizeof(char) * (i + ci + 1));
-		
-
-		
-	if (conct == NULL)
-		
+	while (*s2)
+	{
+		lens2++;
+		s2++;
+	}
+	s2 = starts2;
+	new_str = malloc(sizeof(char) * (lens1 + lens2 + 1));
+	starts1 = new_str;
+	if (new_str == NULL)
 		return (NULL);
-		
-	i = ci = 0;
-		
-	while (s1[i] != '\0')
-		
+	for (; i < (lens1 + lens2); i++)
 	{
-		
-		conct[i] = s1[i];
-		
-		i++;
-		
+		if (i < lens1)
+		{
+			new_str[i] = *s1;
+			s1++;
+		}
+		else
+		{
+			new_str[i] = *s2;
+			s2++;
+		}
 	}
-		
-
-		
-	while (s2[ci] != '\0')
-		
-	{
-		
-		conct[i] = s2[ci];
-		
-		i++, ci++;
-		
-	}
-		
-	conct[i] = '\0';
-		
-	return (conct);
-		
+	new_str[i] = '\0';
+	return (starts1);
 }
