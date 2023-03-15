@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 /**
+ * count_word - helper function to count the number of words in a string
  * strtow - A function that splits a string into words
  * @str: An input pointer of the string to split
  * Return: Apointer to concatened strings or NULL if it str is NULL
@@ -16,7 +17,7 @@ char **strtow(char *str)
 	for (; str[i]; i++)
 	{
 		if ((str[i] != ' ' || *str != '\t') &&
-				((str[i + 1] == ' ' || str[i + 1] == '\t') || str[i + 1] == '\n'))
+			((str[i + 1] == ' ' || str[i + 1] == '\t') || str[i + 1] == '\n'))
 			count++;
 	}
 	if (count == 0)
