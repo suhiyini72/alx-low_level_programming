@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-/* How to use constructors in C language */
+/* How to Use constructors in C! Who knew!? */
 void main_constructor(void) __attribute__((constructor));
 /**
- * main_constructor - This is the constructor function which prints a message
- * before main runs
- * Return: To nothing
+ * main_constructor - constructor function that runs before main ()
+ *
+ * Return: always void
  */
 void main_constructor(void)
 {
 	printf("You're such a beat! and yet, you ought to allow,\n");
-	printf("I kept my house on my back!\n");
+	printf("I put my house on my back!\n");
 }
