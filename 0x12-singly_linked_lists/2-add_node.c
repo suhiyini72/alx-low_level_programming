@@ -19,7 +19,7 @@ list_t *add_node(list_t **head, const char *str)
 	while (str[lent])
 		lent++;
 
-	emp->len = lent;
+	tmp->len = lent;
 	tmp->str = strdup(str);
 	tmp->next = *head;
 	*head = tmp;
