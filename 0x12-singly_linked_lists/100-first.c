@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* How to Use constructors in C! Who knew!? */
+/* Using constructors in C! Who knew!? */
 void main_constructor(void) __attribute__((constructor));
 /**
  * main_constructor - constructor function that runs before main ()
@@ -9,6 +9,6 @@ void main_constructor(void) __attribute__((constructor));
  */
 void main_constructor(void)
 {
-	printf("You're such a beat! and yet, you ought to allow,\n");
-	printf("I put my house on my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
