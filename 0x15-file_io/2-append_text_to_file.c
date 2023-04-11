@@ -1,39 +1,37 @@
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/uio.h>
-#include <unistd.h>
-#include <fcntl.h>
+#include "main.h"
 
 /**
- * append_text_to_file - This function appends text to the end of the file
- * @filename: Refers to the filename to open as well as append to
- * @text_content: A terminated NULL string to be added
- * Return: 1 if successful, and -1 if file creation or write fail
+ * append_text_to_file - This function adds text to the end of a file.
+ * @filename: Name of a pointer to a file.
+ * @text_content: Text string to append at the end of the file.
+ * Return: 1 if successful, -1 if function fails or filename is NULL, 
+ * otherwise -1 if the file does not exist
  */
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-int fd_open, fd_write, length = 0;
+	int op;
+	
+	int wr;
+	
+	int  lg = 0;
 
-if (filename == NULL)
-	return (-1);
+	if (filename == NULL)
+		return (-1);
 
-fd_open = open(filename, O_RDWR | O_APPEND);
-if (fd_open < 0)
-	return (-1);
-if (text_content == NULL)
-{
-	close(fd_open);
-	return (1);
-}
+	if (text_content != NULL)
+	{
+		for (lg = 0; text_content[lg];)
+			lg++;
+	}
 
-while (*(text_content + length))
-	length++;
+	op = open(filename, O_WRONLY | O_APPEND);
+	wr = write(op, text_content, lg);
 
-fd_write = write(fd_open, text_content, length);
-	close(fd_open);
-if (fd_write < 0)
-	return (-1);
+	if (op == -1 || wr == -1)
+		return (-1);
+
+	close(op);
 
 	return (1);
 }
