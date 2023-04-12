@@ -2,9 +2,9 @@
 
 /**
  * get_bit - This function gets a bit at the index
- * @n: This is the  number to get bit 
+ * @n: This is the  number to get bit
  * @index: This is the index of bit
- * Return: value of bit else -1 if fail 
+ * Return: value of bit else -1 if fail
  */
 
 int get_bit(unsigned long int n, unsigned int index)

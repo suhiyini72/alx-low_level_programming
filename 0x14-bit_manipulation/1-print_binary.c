@@ -3,7 +3,7 @@
 /**
  * print_binary - This function prints a binary number excluding % or /
  * @n: Refers to the number to be printed
- * Return: Returns nothing
+ * Return: nothing
  */
 
 void print_binary(unsigned long int n)
@@ -14,7 +14,7 @@ unsigned int mx = 32768;
 if (n == 0)
 {
 _putchar('0');
-	return;
+	return (0);
 }
 while (mx)
 {
