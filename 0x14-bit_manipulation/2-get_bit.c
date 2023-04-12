@@ -1,23 +1,21 @@
 #include "main.h"
 
 /**
- * get_bit - This function gets a bit at the index
- * @n: This is the  number to get bit
- * @index: This is the index of bit
- * Return: the value of the bit at index
- * or -1 if an error occured
+ * get_bit - Function that returns the value of a bit
+ * @n: the number to search for
+ * @index: refers to the index of the bit
+ *
+ * Return: the value of the bit
  */
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-unsigned long int mx = 0x01;
+int bit_value;
 
-mx <<= index;
-if (mx == 0)
+if (index > 63)
 	return (-1);
 
-if ((n & mx))
-	return (1);
-else
-	return (0);
+bit_value = (n >> index) & 1;
+	return (bit_value);
 }
+
