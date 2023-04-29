@@ -1,16 +1,18 @@
-#include "main.h"
-#include <stdlib.h>
+#include <main.h>
 #include <stdio.h>
-#define ERR_MSG "Error"
+#include <stdlib.h>
+
 /**
-* is_digit - checks if a string contains a non-digit char
-* @s: string to be evaluated
-* Return: 0 if a non-digit is found, 1 otherwise
-*/
+ * main - Check the code
+ * @argc: number of arguments
+ * @argv: arguments
+ * Return: Nothing
+ */
 
 int main(int argc, char **argv)
 {
 int num1, num2, result;
+
 if (argc != 3)
 {
 printf("Error\n");
