@@ -1,19 +1,27 @@
-#include <stdio.h>
-#include "main.h"
+#include "alx.h"
 
 /**
- * print_binary: A function that prints a decimal as binary
- * @n: A long integer
+ * print_binary: This function converts a decimal number to a binary
+ * @n: refers to the number to print in binary
  */
 
 void print_binary(unsigned long int n)
 {
-unsigned long int bit;
-bit = 1UL << (sizeof(unsigned long int) * 8 - 1);
 int k;
-for (k = 0; k < sizeof(unsigned long int) * 8; k++)
+cnt = 0;
+unsigned long int curr;
+
+for (k = 63; k >= 0; k--)
 {
-putchar ((n & bit) ? '1' : '0');
-bit >>= 1;
+	curr = n >> k;
+	if (curr & 1)
+	{
+		_putchar('1');
+		cnt++;
+	}
+	else if (cnt)
+		_putchar('0');
 }
+	if (!cnt)
+	_putchar('0');
 }
