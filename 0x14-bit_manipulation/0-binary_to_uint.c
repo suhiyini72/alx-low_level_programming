@@ -3,22 +3,34 @@
 /**
  * binary_to_uint: a function that converts a binary number to unsigned int
  * @b: a string that contains the binary number
- * Return: the converted unsigned int
+ * Return: the coverted integer
  */
 
-unsigned int binary_to_uint (const char *b)
+unsigned int binary_to_uint(const char *b)
 {
-	int z;
-	unsigned int n = 0;
+unsigned int v;
+int dec;
+int two;
 
-	if (!b)
-		return (0);
+if (!b)
+	return (0);
 
-	for (z = 0; b[z]; z++)
-	{
-		if (b[z] < '0' || b[z] > '1')
-			return (0);
-		n = 2 * n + (b[z] - '0');
-	}
-	return (n);
+v = 0;
+
+for (dec = 0; b[dec] != '\0'; dec++)
+	;
+
+for (dec--, two = 1; dec >= 0; dec--, two *= 2)
+{
+if (b[dec] != '0' && b[dec] != '1')
+{
+return (0);
+}
+
+if (b[dec] & 1)
+{
+v += two;
+		}
+}
+return (v);
 }
