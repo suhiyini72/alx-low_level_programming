@@ -1,4 +1,4 @@
-#include "alx.h"
+#include "main.h"
 
 /**
  * clear_bit: This function sets a bit value to 0

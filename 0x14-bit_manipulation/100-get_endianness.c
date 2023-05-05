@@ -1,4 +1,4 @@
-#include "alx.h"
+#include "main.h"
 
 /**
  * get_endianness: This function checks for little or big endian machine

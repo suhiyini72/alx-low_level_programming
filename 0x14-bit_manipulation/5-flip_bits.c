@@ -1,4 +1,4 @@
-#include "alx.h"
+#include "main.h"
 
 /**
  * flip_bits: This function counts the bits number to change

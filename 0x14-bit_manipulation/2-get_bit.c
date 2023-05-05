@@ -1,4 +1,4 @@
-#include "alx.h"
+#include "main.h"
 
 /**
  * get_bit: This function returns a bit value using index in a decimal number

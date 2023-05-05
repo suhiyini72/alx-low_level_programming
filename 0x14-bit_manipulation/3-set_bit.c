@@ -1,4 +1,4 @@
-#include "alx.h"
+#include "main.h"
 
 /**
  * set_bit: This function sets a bit to 1 with a given index
