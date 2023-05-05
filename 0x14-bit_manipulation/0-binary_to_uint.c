@@ -1,4 +1,4 @@
-#include "alx.h"
+#include "main.h"
 
 /**
  * binary_to_uint: This function converts a binary number to unsigned int
