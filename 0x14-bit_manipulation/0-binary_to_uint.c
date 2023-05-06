@@ -3,7 +3,9 @@
 /**
  * binary_to_uint: a function that converts a binary number to unsigned int
  * @b: a string that contains the binary number
- * Return: the coverted integer
+ * Return: the converted number, or 0 if
+ * there is one or more chars in the string b that is not 0 or 1
+ * b is NUL
  */
 
 unsigned int binary_to_uint(const char *b)
