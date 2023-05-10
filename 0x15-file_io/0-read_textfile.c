@@ -1,7 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <sys/uio.h>
-#include <fcntl.h>
 
 /**
  * read_textfile: A function that reads a text file and print to STDOUT
