@@ -6,14 +6,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int s_klose(int);
-
 /**
  * main: The main function to copy files
  * @argc: Arguments number that are passed
  * @argv: Refers to pointers of array arguments
  * Return: 1 if successful, otherwise exits on failure
+ *
+ * Description: if incorrect argument count - exit code 97
+ * 	if file_from does not exist, or if you can not read it, exit with code 98
+ * 	if file_to cannot be created or written to, exit with code 99
+ * 	if file_to or file_from cannot be closed, exit with code 100
  */
+
+int s_klose(int);
 
 int main(int argc, char *argv[])
 {

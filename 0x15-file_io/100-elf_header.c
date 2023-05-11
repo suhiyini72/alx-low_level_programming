@@ -1,9 +1,5 @@
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <sys/uio.h>
-#include <fcntl.h>
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main: The main function to get header of ELF file
@@ -14,6 +10,6 @@
 
 int main(int argc, char *argv[])
 {
-	printf("argc:%d, argv:%p\n", argc, (void *)*argv);
+	_putchar("argc:%d, argv:%p\n", argc, (void *)*argv);
 	return (1);
 }

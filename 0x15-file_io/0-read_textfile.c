@@ -9,7 +9,7 @@
 /**
  * read_textfile: A function that reads a text file and print to STDOUT
  * @filename: The text file name that is being read
- * letters: The number of letters to read
+ * @letters: The number of letters to to be read
  * Return: The actual number of bytes it could read and print to STDOUT
  * 0 if filename is NULL, or function failure
  */
