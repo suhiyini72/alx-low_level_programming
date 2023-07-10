@@ -2,7 +2,7 @@
 
 /**
  * create_file - A function that creates a file
- * @filename: This is a pointer to the file 
+ * @filename: This is a pointer to the file
  * @text_content: This is a pointer to a string
  *
  * Return: 1 on success, -1 on failure
@@ -11,7 +11,7 @@
 int create_file(const char *filename, char *text_content)
 {
 int qt;
-int k; 
+int k;
 int z = 0;
 
 if (filename == NULL)
